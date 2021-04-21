@@ -64,7 +64,8 @@ describe('App Page', () => {
 
   it('should be able to remove a task', async () => {
     render(<TaskList />);
-
+    //Confirm da remoção
+    window.confirm = jest.fn().mockImplementation(() => true)
     const taskInput = screen.getByPlaceholderText('Adicionar novo todo');
     const addTaskButton = screen.getByTestId('add-task-button');
 
